@@ -55,6 +55,7 @@ body {
   font-family: sans-serif;
   margin: 20px;
   padding: 0;
+  color: rgb(0, 0, 0);
 }
 
 .square {
@@ -101,4 +102,8 @@ body {
 
 .game-info {
   margin-left: 20px;
+}
+
+.color {
+  color:rgb(255, 0, 0);
 }
