@@ -9,16 +9,13 @@ var checkpieces = [
   ["","o","","o","","o","","o"],
   ["o","","o","","o","","o",""],
 ]
-function Square({color,value}) {
-  function handleClick(){
-   if () {
-    
-   }
-  }
+
+function Square({color,value,onSquareClick}) {
+  
   return (
   <button 
     className={color}
-    onClick={handleClick}
+    onClick={onSquareClick}
   >
     {value}
   </button>
@@ -26,14 +23,21 @@ function Square({color,value}) {
 }
 
 export default function Board() {
-  const [squares, setSquare] = useState(checkpieces);;
+  const [squares, setSquare] = useState(checkpieces);
+  let fun = "blocked"
+  function handleClick(){
+   if (squares[0][1] == "c") {
+    console.log("hii")
+    fun = "no space"
+   }
+  }
   return (
     <>
-    <div className="color">hiiii</div>
+    <div className="color">{fun}</div>
     
     <div className="board-row">
-      <Square value={squares[0][0]} color = "square"/>
-      <Square value={squares[0][1]} color = "squaret"/>
+      <Square value={squares[0][0]} color = "square" onSquareClick = {handleClick}/>
+      <Square value={squares[0][1]} color = "squaret" onSquareClick = {handleClick}/>
       <Square value={squares[0][2]} color = "square"/>
       <Square value={squares[0][3]} color = "squaret"/>
       <Square value={squares[0][4]} color = "square"/>
