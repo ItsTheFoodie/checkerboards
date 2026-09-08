@@ -13,18 +13,29 @@ var checkpieces = [
 let fun = "here"
 
 function Square({color,value,onSquareClick}) {
-  
+ function  test(){
+  console.log('nonsense')
+ }
   return (
   <button 
     className={color}
-    onClick={onSquareClick}
+    onClick= {onSquareClick}
   >
     {value}
   </button>
   );
 }
 
-export default function Board() {
+export default function Game() {
+    return(
+      <div className='Liverpool'>
+       <Board/>
+
+      </div>
+    )
+}
+
+ function Board() {
   const [squares, setSquare] = useState(checkpieces);
   function handleClick(){
    if (squares[0][1] == "c") {
@@ -41,7 +52,7 @@ export default function Board() {
       <Square value={squares[0][0]} color = "square" onSquareClick = {handleClick}/>
       <Square value={squares[0][1]} color = "squaret" onSquareClick = {handleClick}/>
       <Square value={squares[0][2]} color = "square" onSquareClick = {handleClick}/>
-      <Square value={squares[0][3]} color = "squaret" />
+      <Square value={squares[0][3]} color = "squaret" onSquareClick = {handleClick}/>
       <Square value={squares[0][4]} color = "square"/>
       <Square value={squares[0][5]} color = "squaret"/>
       <Square value={squares[0][6]} color = "square"/>
